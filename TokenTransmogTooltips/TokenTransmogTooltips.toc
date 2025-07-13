@@ -3,6 +3,11 @@
 ## Author: McTalian
 ## Version: @project-version@
 ## Notes: Quickly see which tokens can be vendored or sent to an alt.
+## SavedVariables: TokenTransmogTooltipsDB
+## IconTexture: Interface/AddOns/TokenTransmogTooltips/logo
+## X-GitHub: https://github.com/Mctalian/TokenTransmogTooltips
+## X-Discord: https://discord.gg/czRYVWhe33
+## X-Curse-Project-ID: 1308934
 
 ## Category-enUS: Collections
 ## Category-deDE: Kriegsmeutesammlungen
@@ -16,9 +21,6 @@
 ## Category-zhCN: 战团藏品
 ## Category-zhTW: 戰隊收藏
 
+Raids/_raids.xml
+tokenClassAppearanceModInfo.lua
 Core.lua
-
-#@alpha@
-itemIDs.lua
-appearanceLookupGenerator.lua
-#@endalpha@

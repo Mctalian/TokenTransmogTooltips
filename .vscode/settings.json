@@ -17,6 +17,16 @@
   "Lua.diagnostics.globals": [
     "ITEM_CLASSES_ALLOWED",
     "class",
-    "SlashCmdList"
-  ]
+    "SlashCmdList",
+    "TooltipDataProcessor",
+    "GetItemInfoFromHyperlink",
+    "TRANSMOG_SET_PARTIALLY_KNOWN_CLASS",
+    "COLLECTED",
+    "LinkUtil",
+    "DEFAULT_CHAT_FRAME",
+    "GameTooltip_AddColoredLine",
+    "Event"
+  ],
+  "Lua.workspace.useGitIgnore": true,
+  "Lua.diagnostics.ignoredFiles": "Disable"
 }

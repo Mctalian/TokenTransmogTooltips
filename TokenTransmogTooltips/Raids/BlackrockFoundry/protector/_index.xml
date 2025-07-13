@@ -1,0 +1,8 @@
+<Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+  <Script file="_index.lua"/>
+  <Script file="hunter.lua"/>
+  <Script file="warrior.lua"/>
+  <Script file="monk.lua"/>
+  <Script file="shaman.lua"/>
+  <Script file="protector.lua"/>
+</Ui>

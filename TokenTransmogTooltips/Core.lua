@@ -2,25 +2,150 @@ local addonName, ns = ...
 
 local TTT = CreateFrame("Frame", addonName)
 
+TTT:RegisterEvent("ADDON_LOADED")
 TTT:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 TTT:SetScript("OnEvent", function(self, event, ...)
-  if event == "PLAYER_ENTERING_WORLD" then
-    self:Initialize()
+  if event == "ADDON_LOADED" then
+    local arg1 = ...
+    if arg1 == addonName then
+      if TokenTransmogTooltipsDB == nil then
+        TokenTransmogTooltipsDB = {}
+      end
+    end
+  elseif event == "PLAYER_ENTERING_WORLD" then
+    local isLogin, isReload = ...
+    if isLogin or isReload then
+      self:Initialize()
+    end
   end
 end)
 
---@alpha@
-SLASH_TOKENTRANSMOGTOOLTIPS1 = "/ttt"
-function SlashCmdList.SLASH_TOKENTRANSMOGTOOLTIPS(msg, editBox)
-  ns.AppearanceLookupGenerator:DumpCopiableData()
+function TTT:GetTooltipInfo(tokenLink)
+  if not tokenLink then
+    return nil, false
+  end
+
+  local _, linkOptions, _ = LinkUtil.ExtractLink(tokenLink) -- linkType, linkOptions, displayText
+  local itemContext = select(12, LinkUtil.SplitLinkOptions(linkOptions))
+  itemContext = tonumber(itemContext) or 0
+  local tooltipInfo = {}
+  table.insert(tooltipInfo, {
+    leftText = "itemContext:",
+    rightText = itemContext or "<NONE>"
+  })
+
+  local tokenId = GetItemInfoFromHyperlink(tokenLink)
+  local tokenData = ns.tokenClassAppearanceModInfo and ns.tokenClassAppearanceModInfo[tokenId]
+  if not tokenData then
+    return tooltipInfo, true
+  end
+
+  if itemContext > 0 and tokenData.Difficulties then
+    if tokenData.Difficulties[itemContext] then
+      tokenData = tokenData.Difficulties[itemContext]
+    end
+  end
+
+  local linksReceived = true
+  for classFileName, appearances in pairs(tokenData) do
+    local classIcon = CreateAtlasMarkup("ClassIcon-" .. classFileName, 16, 16)
+    local appearanceCount = 0
+    local collectedAppearanceCount = 0
+    local missingItems = {}
+    for appearanceId, modIds in pairs(appearances) do
+      appearanceCount = appearanceCount + 1
+      local classCollectedAppearance = false
+      local sources
+      if TokenTransmogTooltipsDB.AllSourcesMode then
+        sources = modIds
+      else
+        sources = C_TransmogCollection.GetAllAppearanceSources(appearanceId)
+      end
+      if not sources or #sources == 0 then
+        linksReceived = false
+        break
+      end
+
+      for _, modId in ipairs(sources) do
+        if C_TransmogCollection.PlayerHasTransmogItemModifiedAppearance(modId) then
+          classCollectedAppearance = true
+          break
+        end
+      end
+      if classCollectedAppearance then
+        collectedAppearanceCount = collectedAppearanceCount + 1
+      else
+        local _, _, _, _, _, itemLink = C_TransmogCollection.GetAppearanceSourceInfo(modIds[1])
+        if itemLink and itemLink ~= "[]" then
+          table.insert(missingItems, itemLink)
+        else
+          linksReceived = false
+        end
+      end
+    end
+
+    if not linksReceived then
+      break
+    end
+
+    local leftText = classIcon
+    if appearanceCount > collectedAppearanceCount then
+      for _, itemLink in ipairs(missingItems) do
+        local rightText = itemLink
+        table.insert(tooltipInfo, {
+          leftText = leftText,
+          rightText = rightText
+        })
+      end
+    else
+      local rightText = COLLECTED
+      table.insert(tooltipInfo, {
+        leftText = leftText,
+        rightText = GREEN_FONT_COLOR:WrapTextInColorCode(rightText)
+      })
+    end
+  end
+  return tooltipInfo, linksReceived
 end
---@end-alpha@
+
+function TTT.OnTooltipSetItem(tooltip)
+  if not tooltip or not tooltip.GetItem then
+    return
+  end
+
+  local _, itemLink = tooltip:GetItem()
+  if not itemLink then
+    return
+  end
+
+  local tooltipInfo, linkReceived = TTT:GetTooltipInfo(itemLink)
+  if tooltipInfo then
+    for _, info in ipairs(tooltipInfo) do
+      tooltip:AddDoubleLine(info.leftText, info.rightText)
+    end
+
+    if not linkReceived then
+      if tooltip.RefreshDataNextUpdate then
+        tooltip:RefreshDataNextUpdate()
+      end
+    end
+
+    tooltip:Show()
+  end
+end
+
+function TTT:UpdateAppearanceTooltip(...)
+  local tooltip, sources, primarySourceID, selectedIndex, showUseError, inLegionArtifactCategory, subheaderString = ...
+  if primarySourceID and primarySourceID > 0 then
+    local _, appearanceID = C_TransmogCollection.GetAppearanceSourceInfo(primarySourceID)
+    GameTooltip_AddColoredLine(tooltip, "appearanceID: " .. tostring(appearanceID), LIGHTBLUE_FONT_COLOR)
+    GameTooltip_AddColoredLine(tooltip, "modID: " .. tostring(primarySourceID), LIGHTBLUE_FONT_COLOR)
+  end
+end
+
 function TTT:Initialize()
-  -- Initialize the addon
-  --@alpha@
-  ns.AppearanceLookupGenerator:Generate()
-  --@endalpha@
+  EventRegistry:RegisterCallback("CollectionWardrobe.SetAppearanceTooltip", TTT.UpdateAppearanceTooltip, TTT)
+
+  TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, self.OnTooltipSetItem)
 end
-
-
