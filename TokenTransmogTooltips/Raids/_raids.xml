@@ -2,5 +2,6 @@
   <Script file="_index.lua"/>
   <Include file="Karazhan/_index.xml"/>
   <Include file="TempestKeep/_index.xml"/>
+  <Include file="BlackTemple/_index.xml"/>
   <Include file="BlackrockFoundry/_index.xml"/>
 </Ui>

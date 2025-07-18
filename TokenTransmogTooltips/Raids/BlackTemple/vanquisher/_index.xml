@@ -1,0 +1,6 @@
+<Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+  <Script file="mage.lua"/>
+  <Script file="druid.lua"/>
+  <Script file="rogue.lua"/>
+  <Script file="vanquisher.lua"/>
+</Ui>
