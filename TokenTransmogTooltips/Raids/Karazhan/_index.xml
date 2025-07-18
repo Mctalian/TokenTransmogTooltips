@@ -1,0 +1,7 @@
+<Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+  <Script file="_index.lua"/>
+  <Include file="champion/_index.xml"/>
+  <Include file="defender/_index.xml"/>
+  <Include file="hero/_index.xml"/>
+  <Script file="tokens.lua"/>
+</Ui>
