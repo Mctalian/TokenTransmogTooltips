@@ -86,3 +86,30 @@ ns._Gear.bf["SHAMAN"] = {
     },
   },
 }
+
+-- Combine all shaman gear into a single table, only useful for raids that have
+-- tokens that can be turned in for any slot within a difficulty.
+local NORMAL_SHAMAN_GEAR = {}
+mergeTable(NORMAL_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["NORMAL"]["CHEST"])
+mergeTable(NORMAL_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["NORMAL"]["GAUNTLETS"])
+mergeTable(NORMAL_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["NORMAL"]["LEGGINGS"])
+mergeTable(NORMAL_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["NORMAL"]["HELM"])
+mergeTable(NORMAL_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["NORMAL"]["SHOULDERS"])
+
+local HEROIC_SHAMAN_GEAR = {}
+mergeTable(HEROIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["HEROIC"]["CHEST"])
+mergeTable(HEROIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["HEROIC"]["GAUNTLETS"])
+mergeTable(HEROIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["HEROIC"]["LEGGINGS"])
+mergeTable(HEROIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["HEROIC"]["HELM"])
+mergeTable(HEROIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["HEROIC"]["SHOULDERS"])
+
+local MYTHIC_SHAMAN_GEAR = {}
+mergeTable(MYTHIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["MYTHIC"]["CHEST"])
+mergeTable(MYTHIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["MYTHIC"]["GAUNTLETS"])
+mergeTable(MYTHIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["MYTHIC"]["LEGGINGS"])
+mergeTable(MYTHIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["MYTHIC"]["HELM"])
+mergeTable(MYTHIC_SHAMAN_GEAR, ns._Gear.bf["SHAMAN"]["MYTHIC"]["SHOULDERS"])
+
+ns._Gear.bf["SHAMAN"]["NORMAL"]["ALL"] = NORMAL_SHAMAN_GEAR
+ns._Gear.bf["SHAMAN"]["HEROIC"]["ALL"] = HEROIC_SHAMAN_GEAR
+ns._Gear.bf["SHAMAN"]["MYTHIC"]["ALL"] = MYTHIC_SHAMAN_GEAR
