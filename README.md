@@ -8,27 +8,34 @@ Since this is an early release of this addon, item tooltips will have `itemConte
 
 It _should_ work with tokens from the following raids:
 
-- Karazhan
-- Tempest Keep
-- Black Temple
-- Naxxramas
-- Ulduar
-- Trial of the Crusader
-- Icecrown Citadel
-- Blackwing Descent / Throne of the Four Winds
-- Firelands
-- Dragon Soul
-- Heart of Fear
-- Throne of Thunder
-- Siege of Orgrimmar
-- Blackrock Foundry
-- Hellfire Citadel
+- T4 (Karazhan, Gruul's Lair, Magtheridon's Lair)
+- T5 (Serpent Shrine Cavern, The Eye/Tempest Keep)
+- T6 (Battle for Mount Hyjal, Black Temple, Sunwell Plateau)
+- T7 (Naxxramas, Obsidian Sanctum)
+- T8 (Ulduar)
+- T9 (Trial of the Crusader)
+- T10 (Icecrown Citadel)
+- T11 (Blackwing Descent / Throne of the Four Winds)
+- T12 (Firelands)
+- T13 (Dragon Soul)
+- T14 (Terrace of Endless Spring, Heart of Fear)
+- T15 (Throne of Thunder)
+- T16 (Siege of Orgrimmar)
+- T17 (Blackrock Foundry)
+- T18 (Hellfire Citadel)
 
 **This data is manually maintained**, so it may not be complete or accurate. If you find a token that is not supported, please open an issue on the [GitHub repository](https://github.com/mctalian/TokenTransmogTooltips/issues).
+
+## Recommended addons
+
+* `Vendor` to set up auto sell/destroy rules
+* `TipTac Reborn` to enable itemID on tooltips (helpful for fixing data, I'm sure there are alternatives, it's just what I use 😝)
 
 ## This doesn't work for this token I just looted!
 
 There isn't a Blizzard API for this type of data, so I have manually added lookup tables for all the tokens I could find. If you find a token that is not supported (or is incorrect), please open an issue on the [GitHub repository](https://github.com/mctalian/TokenTransmogTooltips/issues), or let me know somehow. Include the token's itemID, the itemContext (should be on the tooltip for now), and which raid it comes from. You can also open the Appearance Journal in-game and find the items that should be associated with that token and provide the appearanceID and modID for those items (this addon adds that data to the tooltips in the Appearance Journal as well).
+
+I'm committed to getting data fixed as soon as possible. I'd like to get this to the point where it's up to date with current raids so that it just needs a data refresh for patches. Please let me know what's missing or incorrect so I can get it updated ASAP 🙏🏻
 
 ## Notes
 
