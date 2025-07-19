@@ -46,6 +46,16 @@ function TTT:GetTooltipInfo(tokenLink)
       tokenData = tokenData.Difficulties[itemContext]
     end
   end
+  if tokenData["ALLIANCE"] and tokenData["HORDE"] then
+    local faction = UnitFactionGroup("player")
+    if faction == "Alliance" then
+      tokenData = tokenData["ALLIANCE"]
+    elseif faction == "Horde" then
+      tokenData = tokenData["HORDE"]
+    else -- Damn Pandas!
+      return tooltipInfo, true
+    end
+  end
 
   local linksReceived = true
   for classFileName, appearances in pairs(tokenData) do
