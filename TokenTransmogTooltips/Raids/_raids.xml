@@ -1,8 +1,9 @@
 <Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
   <Script file="_index.lua"/>
-  <Include file="Naxxramas/_index.xml"/>
   <Include file="Karazhan/_index.xml"/>
   <Include file="TempestKeep/_index.xml"/>
   <Include file="BlackTemple/_index.xml"/>
+  <Include file="Naxxramas/_index.xml"/>
+  <Include file="Ulduar/_index.xml"/>
   <Include file="BlackrockFoundry/_index.xml"/>
 </Ui>
