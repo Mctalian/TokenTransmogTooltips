@@ -7,5 +7,6 @@
   <Include file="Ulduar/_index.xml"/>
   <Include file="TrialOfTheCrusader/_index.xml"/>
   <Include file="IcecrownCitadel/_index.xml"/>
+  <Include file="Tier11/_index.xml"/>
   <Include file="BlackrockFoundry/_index.xml"/>
 </Ui>
