@@ -147,10 +147,18 @@ end
 
 function TTT:UpdateAppearanceTooltip(...)
   local tooltip, sources, primarySourceID, selectedIndex, showUseError, inLegionArtifactCategory, subheaderString = ...
-  if primarySourceID and primarySourceID > 0 then
-    local _, appearanceID = C_TransmogCollection.GetAppearanceSourceInfo(primarySourceID)
+  local sourceId
+  if not selectedIndex then
+    sourceId = primarySourceID
+  else
+    local validIndex = CollectionWardrobeUtil.GetValidIndexForNumSources(selectedIndex, #sources)
+    local source = sources[validIndex]
+    sourceId = source.sourceID
+  end
+  if sourceId then
+    local _, appearanceID = C_TransmogCollection.GetAppearanceSourceInfo(sourceId)
     GameTooltip_AddColoredLine(tooltip, "appearanceID: " .. tostring(appearanceID), LIGHTBLUE_FONT_COLOR)
-    GameTooltip_AddColoredLine(tooltip, "modID: " .. tostring(primarySourceID), LIGHTBLUE_FONT_COLOR)
+    GameTooltip_AddColoredLine(tooltip, "modID: " .. tostring(sourceId), LIGHTBLUE_FONT_COLOR)
   end
 end
 
