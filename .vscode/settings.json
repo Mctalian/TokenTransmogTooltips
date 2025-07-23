@@ -25,7 +25,8 @@
     "LinkUtil",
     "DEFAULT_CHAT_FRAME",
     "GameTooltip_AddColoredLine",
-    "Event"
+    "Event",
+    "CollectionWardrobeUtil"
   ],
   "Lua.workspace.useGitIgnore": true,
   "Lua.diagnostics.ignoredFiles": "Disable"
