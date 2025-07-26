@@ -59,5 +59,11 @@ ns._Gear.tier11["VANQUISHER"] = {
       ["MAGE"] = mage["HEROIC"]["GAUNTLETS"],
       ["ROGUE"] = rogue["HEROIC"]["GAUNTLETS"],
     },
+    ["ALL"] = {
+      ["DEATHKNIGHT"] = deathknight["HEROIC"]["ALL"],
+      ["DRUID"] = druid["HEROIC"]["ALL"],
+      ["MAGE"] = mage["HEROIC"]["ALL"],
+      ["ROGUE"] = rogue["HEROIC"]["ALL"],
+    },
   },
 }

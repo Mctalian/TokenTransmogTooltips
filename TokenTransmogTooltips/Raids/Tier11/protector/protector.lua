@@ -49,5 +49,10 @@ ns._Gear.tier11["PROTECTOR"] = {
       ["WARRIOR"] = warrior["HEROIC"]["GAUNTLETS"],
       ["SHAMAN"] = shaman["HEROIC"]["GAUNTLETS"],
     },
+    ["ALL"] = {
+      ["HUNTER"] = hunter["HEROIC"]["ALL"],
+      ["WARRIOR"] = warrior["HEROIC"]["ALL"],
+      ["SHAMAN"] = shaman["HEROIC"]["ALL"],
+    },
   },
 }

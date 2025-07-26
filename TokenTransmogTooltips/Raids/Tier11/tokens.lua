@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@type Tier11GearLookup
 local tier11Gear = ns._Gear.tier11
 ---@type Tier11Conqueror
@@ -8,6 +10,11 @@ local conquerorGear = tier11Gear["CONQUEROR"]
 local protectorGear = tier11Gear["PROTECTOR"]
 ---@type Tier11Vanquisher
 local vanquisherGear = tier11Gear["VANQUISHER"]
+
+local ALL_HEROIC_GEAR = {}
+mergeTable(ALL_HEROIC_GEAR, conquerorGear["HEROIC"]["ALL"])
+mergeTable(ALL_HEROIC_GEAR, protectorGear["HEROIC"]["ALL"])
+mergeTable(ALL_HEROIC_GEAR, vanquisherGear["HEROIC"]["ALL"])
 
 ns.Raids.Tier11 = {
   --#region Normal tokens
@@ -56,5 +63,7 @@ ns.Raids.Tier11 = {
   [67430] = protectorGear["HEROIC"]["GAUNTLETS"],
   -- https://wowhead.com/item=67431/gauntlets-of-the-forlorn-vanquisher
   [67431] = vanquisherGear["HEROIC"]["GAUNTLETS"],
+  -- https://www.wowhead.com/item=66998/essence-of-the-forlorn
+  [66998] = ALL_HEROIC_GEAR,
   --#endregion
 }
