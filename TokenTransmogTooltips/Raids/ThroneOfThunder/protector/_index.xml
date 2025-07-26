@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Script file="hunter.lua"/>
+  <Script file="warrior.lua"/>
+  <Script file="monk.lua"/>
+  <Script file="shaman.lua"/>
+  <Script file="protector.lua"/>
+</Ui>

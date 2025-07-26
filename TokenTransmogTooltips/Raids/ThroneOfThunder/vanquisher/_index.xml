@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Script file="mage.lua"/>
+  <Script file="druid.lua"/>
+  <Script file="deathknight.lua"/>
+  <Script file="rogue.lua"/>
+  <Script file="vanquisher.lua"/>
+</Ui>

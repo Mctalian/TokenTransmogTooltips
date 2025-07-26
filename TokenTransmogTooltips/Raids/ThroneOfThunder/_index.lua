@@ -7,6 +7,7 @@ local addonName, ns = ...
 ---@field WARLOCK ThroneOfThunderWarlock
 ---@field PROTECTOR ThroneOfThunderProtector
 ---@field HUNTER ThroneOfThunderHunter
+---@field MONK ThroneOfThunderMonk
 ---@field SHAMAN ThroneOfThunderShaman
 ---@field WARRIOR ThroneOfThunderWarrior
 ---@field VANQUISHER ThroneOfThunderVanquisher
@@ -14,4 +15,4 @@ local addonName, ns = ...
 ---@field DRUID ThroneOfThunderDruid
 ---@field MAGE ThroneOfThunderMage
 ---@field ROGUE ThroneOfThunderRogue
-ns._Gear.throneOfThunder = {}
+ns._Gear.ThroneOfThunder = {}
