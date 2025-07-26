@@ -49,5 +49,10 @@ ns._Gear.tier11["CONQUEROR"] = {
       ["WARLOCK"] = warlock["HEROIC"]["GAUNTLETS"],
       ["PRIEST"] = priest["HEROIC"]["GAUNTLETS"],
     },
+    ["ALL"] = {
+      ["PALADIN"] = paladin["HEROIC"]["ALL"],
+      ["WARLOCK"] = warlock["HEROIC"]["ALL"],
+      ["PRIEST"] = priest["HEROIC"]["ALL"],
+    },
   },
 }

@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class Tier11Rogue
 ns._Gear.tier11["ROGUE"] = {
   ["NORMAL"] = {
@@ -42,3 +44,12 @@ ns._Gear.tier11["ROGUE"] = {
     },
   },
 }
+
+local HEROIC_ROGUE_GEAR = {}
+mergeTable(HEROIC_ROGUE_GEAR, ns._Gear.tier11["ROGUE"]["HEROIC"]["CHEST"])
+mergeTable(HEROIC_ROGUE_GEAR, ns._Gear.tier11["ROGUE"]["HEROIC"]["GAUNTLETS"])
+mergeTable(HEROIC_ROGUE_GEAR, ns._Gear.tier11["ROGUE"]["HEROIC"]["LEGGINGS"])
+mergeTable(HEROIC_ROGUE_GEAR, ns._Gear.tier11["ROGUE"]["HEROIC"]["HELM"])
+mergeTable(HEROIC_ROGUE_GEAR, ns._Gear.tier11["ROGUE"]["HEROIC"]["SHOULDERS"])
+
+ns._Gear.tier11["ROGUE"]["HEROIC"]["ALL"] = HEROIC_ROGUE_GEAR
