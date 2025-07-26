@@ -1,0 +1,6 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Script file="priest.lua"/>
+  <Script file="warlock.lua"/>
+  <Script file="paladin.lua"/>
+  <Script file="conqueror.lua"/>
+</Ui>
