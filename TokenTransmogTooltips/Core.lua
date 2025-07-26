@@ -87,8 +87,13 @@ function TTT:GetTooltipInfo(tokenLink)
         collectedAppearanceCount = collectedAppearanceCount + 1
       else
         local _, _, _, _, _, itemLink = C_TransmogCollection.GetAppearanceSourceInfo(modIds[1])
-        if itemLink and itemLink ~= "[]" then
-          table.insert(missingItems, itemLink)
+        if itemLink then
+          local linkType, linkOptions, displayText = LinkUtil.ExtractLink(itemLink)
+          if linkType ~= "item" or displayText == "" or displayText == "[]" then
+            linksReceived = false
+          else
+            table.insert(missingItems, itemLink)
+          end
         else
           linksReceived = false
         end
