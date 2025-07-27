@@ -59,7 +59,14 @@ function TTT:GetTooltipInfo(tokenLink)
 
   local linksReceived = true
   for classFileName, appearances in pairs(tokenData) do
-    local classIcon = CreateAtlasMarkup("ClassIcon-" .. classFileName, 16, 16)
+    local classIcon = ""
+    if ns.shadowlandsMultiClassLookup[classFileName] then
+      for _, fileName in ipairs(ns.shadowlandsMultiClassLookup[classFileName]) do
+        classIcon = classIcon .. CreateAtlasMarkup("ClassIcon-" .. fileName, 16, 16) .. " "
+      end
+    else
+      classIcon = CreateAtlasMarkup("ClassIcon-" .. classFileName, 16, 16)
+    end
     local appearanceCount = 0
     local collectedAppearanceCount = 0
     local missingItems = {}

@@ -23,6 +23,16 @@ for raidName, raidData in pairs(ns.Raids) do
   end)
 end
 
+ns.shadowlandsMultiClassLookup = {
+  ["MYSTIC"] = { "DRUID", "HUNTER", "MAGE" },
+  ["ZENITH"] = { "EVOKER", "MONK", "ROGUE", "WARRIOR" },
+  ["VENERATED"] = { "PALADIN", "PRIEST", "SHAMAN" },
+  ["ABOMINABLE"] = { "DEATHKNIGHT", "DEMONHUNTER", "WARLOCK" },
+  ["DREADFUL"] = { "DEATHKNIGHT", "DEMONHUNTER", "WARLOCK" },
+  ["APOGEE"] = { "WARRIOR", "PALADIN", "PRIEST", "MONK", "EVOKER" },
+  ["THAUMATURGIC"] = { "SHAMAN", "MAGE", "WARLOCK", "DRUID" },
+}
+
 --@alpha@
 TTT_Debug = ns.tokenClassAppearanceModInfo
 --@end-alpha@
