@@ -22,7 +22,8 @@ It _should_ work with tokens from the following raids:
 - T15 (Throne of Thunder)
 - T16 (Siege of Orgrimmar)
 - T17 (Blackrock Foundry)
-- T18 (Hellfire Citadel)
+- Castle Nathria
+- Sepulcher of the First Ones
 
 **This data is manually maintained**, so it may not be complete or accurate. If you find a token that is not supported, please open an issue on the [GitHub repository](https://github.com/mctalian/TokenTransmogTooltips/issues).
 
