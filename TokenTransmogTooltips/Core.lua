@@ -30,10 +30,12 @@ function TTT:GetTooltipInfo(tokenLink)
   local itemContext = select(12, LinkUtil.SplitLinkOptions(linkOptions))
   itemContext = tonumber(itemContext) or 0
   local tooltipInfo = {}
+  --@alpha@
   table.insert(tooltipInfo, {
     leftText = "itemContext:",
     rightText = itemContext or "<NONE>"
   })
+  --@end-alpha@
 
   local tokenId = GetItemInfoFromHyperlink(tokenLink)
   local tokenData = ns.tokenClassAppearanceModInfo and ns.tokenClassAppearanceModInfo[tokenId]
