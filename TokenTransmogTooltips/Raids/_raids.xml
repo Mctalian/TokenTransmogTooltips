@@ -17,4 +17,5 @@
   <Include file="CastleNathria/_index.xml"/>
   <Include file="SepulcherOfTheFirstOnes/_index.xml"/>
   <Include file="VaultOfTheIncarnates/_index.xml"/>
+  <Include file="Aberrus/_index.xml"/>
 </Ui>
