@@ -1,0 +1,6 @@
+<Ui>
+    <Script file="paladin.lua"/>
+    <Script file="priest.lua"/>
+    <Script file="shaman.lua"/>
+    <Script file="venerated.lua"/>
+</Ui>
