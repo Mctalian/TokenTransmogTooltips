@@ -27,6 +27,7 @@ It _should_ work with tokens from the following raids:
 - Vault of the Incarnates
 - Aberrus, the Shadowed Crucible
 - Amirdrassil, the Dream's Hope
+- Nerub'ar Palace
 
 **This data is manually maintained**, so it may not be complete or accurate. If you find a token that is not supported, please open an issue on the [GitHub repository](https://github.com/mctalian/TokenTransmogTooltips/issues).
 

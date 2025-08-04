@@ -19,4 +19,5 @@
   <Include file="VaultOfTheIncarnates/_index.xml"/>
   <Include file="Aberrus/_index.xml"/>
   <Include file="Amirdrassil/_index.xml"/>
+  <Include file="NerubArPalace/_index.xml"/>
 </Ui>
