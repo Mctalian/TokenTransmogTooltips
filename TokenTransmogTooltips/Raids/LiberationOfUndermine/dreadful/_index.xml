@@ -1,0 +1,6 @@
+<Ui>
+    <Script file="deathknight.lua"/>
+    <Script file="demonhunter.lua"/>
+    <Script file="warlock.lua"/>
+    <Script file="dreadful.lua"/>
+</Ui>
