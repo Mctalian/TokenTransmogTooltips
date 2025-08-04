@@ -1,0 +1,38 @@
+local addonName, ns = ...
+
+---@class LOUPaladin
+---@field RAID_FINDER table<string, table>
+---@field NORMAL table<string, table>
+---@field HEROIC table<string, table>
+---@field MYTHIC table<string, table>
+
+ns._Gear.LOU.PALADIN = {
+  ["RAID_FINDER"] = {
+    ["HELM"] = {[97044]={225346,},},
+    ["SHOULDERS"] = {[97045]={225322,},},
+    ["CHEST"] = {[97046]={225382,},},
+    ["GAUNTLETS"] = {[97051]={225358,},},
+    ["LEGGINGS"] = {[97048]={225334,},},
+  },
+  ["NORMAL"] = {
+    ["HELM"] = {[97035]={225341,},},
+    ["SHOULDERS"] = {[97055]={225317,},},
+    ["CHEST"] = {[97036]={225377,},},
+    ["GAUNTLETS"] = {[97041]={225353,},},
+    ["LEGGINGS"] = {[97038]={225329,},},
+  },
+  ["HEROIC"] = {
+    ["HELM"] = {[96991]={225347,},},
+    ["SHOULDERS"] = {[96992]={225323,},},
+    ["CHEST"] = {[96993]={225383,},},
+    ["GAUNTLETS"] = {[96998]={225359,},},
+    ["LEGGINGS"] = {[96995]={225335,},},
+  },
+  ["MYTHIC"] = {
+    ["HELM"] = {[97011]={225348,},},
+    ["SHOULDERS"] = {[97012]={225324,},},
+    ["CHEST"] = {[97004]={225384,},},
+    ["GAUNTLETS"] = {[97009]={225360,},},
+    ["LEGGINGS"] = {[97006]={225336,},},
+  },
+}
