@@ -1,0 +1,38 @@
+local addonName, ns = ...
+
+---@class ManaforgeOmegaEvoker
+---@field RAID_FINDER table<string, table>
+---@field NORMAL table<string, table>
+---@field HEROIC table<string, table>
+---@field MYTHIC table<string, table>
+
+ns._Gear.ManaforgeOmega.EVOKER = {
+  ["RAID_FINDER"] = {
+    ["HELM"] = {[104847]={286115,},},
+    ["SHOULDERS"] = {[104848]={286091,},},
+    ["CHEST"] = {[104849]={286151,},},
+    ["GAUNTLETS"] = {[104854]={286127,},},
+    ["LEGGINGS"] = {[104851]={286103,},},
+  },
+  ["NORMAL"] = {
+    ["HELM"] = {[104836]={286110,},},
+    ["SHOULDERS"] = {[104837]={286086,},},
+    ["CHEST"] = {[104838]={286146,},},
+    ["GAUNTLETS"] = {[104843]={286122,},},
+    ["LEGGINGS"] = {[104840]={286098,},},
+  },
+  ["HEROIC"] = {
+    ["HELM"] = {[104825]={286116,},},
+    ["SHOULDERS"] = {[104826]={286092,},},
+    ["CHEST"] = {[104827]={286152,},},
+    ["GAUNTLETS"] = {[104832]={286128,},},
+    ["LEGGINGS"] = {[104829]={286104,},},
+  },
+  ["MYTHIC"] = {
+    ["HELM"] = {[104878]={286117,},},
+    ["SHOULDERS"] = {[104879]={286093,},},
+    ["CHEST"] = {[104871]={286153,},},
+    ["GAUNTLETS"] = {[104876]={286129,},},
+    ["LEGGINGS"] = {[104873]={286105,},},
+  },
+}
