@@ -1,0 +1,7 @@
+<Ui>
+    <Script file="evoker.lua"/>
+    <Script file="monk.lua"/>
+    <Script file="rogue.lua"/>
+    <Script file="warrior.lua"/>
+    <Script file="zenith.lua"/>
+</Ui>
