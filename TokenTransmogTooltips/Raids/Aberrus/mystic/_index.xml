@@ -1,0 +1,6 @@
+<Ui>
+    <Script file="druid.lua"/>
+    <Script file="hunter.lua"/>
+    <Script file="mage.lua"/>
+    <Script file="mystic.lua"/>
+</Ui>
