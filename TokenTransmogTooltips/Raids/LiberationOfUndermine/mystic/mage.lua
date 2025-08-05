@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class LOUMage
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,36 @@ ns._Gear.LOU.MAGE = {
     ["LEGGINGS"] = {[96686]={226510,},},
   },
 }
+
+local RAID_FINDER_MAGE_GEAR = {}
+mergeTable(RAID_FINDER_MAGE_GEAR, ns._Gear.LOU.MAGE["RAID_FINDER"]["HELM"])
+mergeTable(RAID_FINDER_MAGE_GEAR, ns._Gear.LOU.MAGE["RAID_FINDER"]["SHOULDERS"])
+mergeTable(RAID_FINDER_MAGE_GEAR, ns._Gear.LOU.MAGE["RAID_FINDER"]["CHEST"])
+mergeTable(RAID_FINDER_MAGE_GEAR, ns._Gear.LOU.MAGE["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(RAID_FINDER_MAGE_GEAR, ns._Gear.LOU.MAGE["RAID_FINDER"]["LEGGINGS"])
+
+local NORMAL_MAGE_GEAR = {}
+mergeTable(NORMAL_MAGE_GEAR, ns._Gear.LOU.MAGE["NORMAL"]["HELM"])
+mergeTable(NORMAL_MAGE_GEAR, ns._Gear.LOU.MAGE["NORMAL"]["SHOULDERS"])
+mergeTable(NORMAL_MAGE_GEAR, ns._Gear.LOU.MAGE["NORMAL"]["CHEST"])
+mergeTable(NORMAL_MAGE_GEAR, ns._Gear.LOU.MAGE["NORMAL"]["GAUNTLETS"])
+mergeTable(NORMAL_MAGE_GEAR, ns._Gear.LOU.MAGE["NORMAL"]["LEGGINGS"])
+
+local HEROIC_MAGE_GEAR = {}
+mergeTable(HEROIC_MAGE_GEAR, ns._Gear.LOU.MAGE["HEROIC"]["HELM"])
+mergeTable(HEROIC_MAGE_GEAR, ns._Gear.LOU.MAGE["HEROIC"]["SHOULDERS"])
+mergeTable(HEROIC_MAGE_GEAR, ns._Gear.LOU.MAGE["HEROIC"]["CHEST"])
+mergeTable(HEROIC_MAGE_GEAR, ns._Gear.LOU.MAGE["HEROIC"]["GAUNTLETS"])
+mergeTable(HEROIC_MAGE_GEAR, ns._Gear.LOU.MAGE["HEROIC"]["LEGGINGS"])
+
+local MYTHIC_MAGE_GEAR = {}
+mergeTable(MYTHIC_MAGE_GEAR, ns._Gear.LOU.MAGE["MYTHIC"]["HELM"])
+mergeTable(MYTHIC_MAGE_GEAR, ns._Gear.LOU.MAGE["MYTHIC"]["SHOULDERS"])
+mergeTable(MYTHIC_MAGE_GEAR, ns._Gear.LOU.MAGE["MYTHIC"]["CHEST"])
+mergeTable(MYTHIC_MAGE_GEAR, ns._Gear.LOU.MAGE["MYTHIC"]["GAUNTLETS"])
+mergeTable(MYTHIC_MAGE_GEAR, ns._Gear.LOU.MAGE["MYTHIC"]["LEGGINGS"])
+
+ns._Gear.LOU["MAGE"]["RAID_FINDER"]["ALL"] = RAID_FINDER_MAGE_GEAR
+ns._Gear.LOU["MAGE"]["NORMAL"]["ALL"] = NORMAL_MAGE_GEAR
+ns._Gear.LOU["MAGE"]["HEROIC"]["ALL"] = HEROIC_MAGE_GEAR
+ns._Gear.LOU["MAGE"]["MYTHIC"]["ALL"] = MYTHIC_MAGE_GEAR

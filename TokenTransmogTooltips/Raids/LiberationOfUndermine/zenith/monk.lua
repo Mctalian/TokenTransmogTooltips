@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class LOUMonk
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,36 @@ ns._Gear.LOU.MONK = {
     ["LEGGINGS"] = {[96934]={225972,},},
   },
 }
+
+local RAID_FINDER_MONK_GEAR = {}
+mergeTable(RAID_FINDER_MONK_GEAR, ns._Gear.LOU.MONK["RAID_FINDER"]["HELM"])
+mergeTable(RAID_FINDER_MONK_GEAR, ns._Gear.LOU.MONK["RAID_FINDER"]["SHOULDERS"])
+mergeTable(RAID_FINDER_MONK_GEAR, ns._Gear.LOU.MONK["RAID_FINDER"]["CHEST"])
+mergeTable(RAID_FINDER_MONK_GEAR, ns._Gear.LOU.MONK["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(RAID_FINDER_MONK_GEAR, ns._Gear.LOU.MONK["RAID_FINDER"]["LEGGINGS"])
+
+local NORMAL_MONK_GEAR = {}
+mergeTable(NORMAL_MONK_GEAR, ns._Gear.LOU.MONK["NORMAL"]["HELM"])
+mergeTable(NORMAL_MONK_GEAR, ns._Gear.LOU.MONK["NORMAL"]["SHOULDERS"])
+mergeTable(NORMAL_MONK_GEAR, ns._Gear.LOU.MONK["NORMAL"]["CHEST"])
+mergeTable(NORMAL_MONK_GEAR, ns._Gear.LOU.MONK["NORMAL"]["GAUNTLETS"])
+mergeTable(NORMAL_MONK_GEAR, ns._Gear.LOU.MONK["NORMAL"]["LEGGINGS"])
+
+local HEROIC_MONK_GEAR = {}
+mergeTable(HEROIC_MONK_GEAR, ns._Gear.LOU.MONK["HEROIC"]["HELM"])
+mergeTable(HEROIC_MONK_GEAR, ns._Gear.LOU.MONK["HEROIC"]["SHOULDERS"])
+mergeTable(HEROIC_MONK_GEAR, ns._Gear.LOU.MONK["HEROIC"]["CHEST"])
+mergeTable(HEROIC_MONK_GEAR, ns._Gear.LOU.MONK["HEROIC"]["GAUNTLETS"])
+mergeTable(HEROIC_MONK_GEAR, ns._Gear.LOU.MONK["HEROIC"]["LEGGINGS"])
+
+local MYTHIC_MONK_GEAR = {}
+mergeTable(MYTHIC_MONK_GEAR, ns._Gear.LOU.MONK["MYTHIC"]["HELM"])
+mergeTable(MYTHIC_MONK_GEAR, ns._Gear.LOU.MONK["MYTHIC"]["SHOULDERS"])
+mergeTable(MYTHIC_MONK_GEAR, ns._Gear.LOU.MONK["MYTHIC"]["CHEST"])
+mergeTable(MYTHIC_MONK_GEAR, ns._Gear.LOU.MONK["MYTHIC"]["GAUNTLETS"])
+mergeTable(MYTHIC_MONK_GEAR, ns._Gear.LOU.MONK["MYTHIC"]["LEGGINGS"])
+
+ns._Gear.LOU["MONK"]["RAID_FINDER"]["ALL"] = RAID_FINDER_MONK_GEAR
+ns._Gear.LOU["MONK"]["NORMAL"]["ALL"] = NORMAL_MONK_GEAR
+ns._Gear.LOU["MONK"]["HEROIC"]["ALL"] = HEROIC_MONK_GEAR
+ns._Gear.LOU["MONK"]["MYTHIC"]["ALL"] = MYTHIC_MONK_GEAR
