@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@type LOUGearLookup
 local louGear = ns._Gear.LOU
 ---@type LOUMystic
@@ -74,28 +76,81 @@ local MYTHIC_ZENITH_LEGS = zenithGear["MYTHIC"]["LEGGINGS"]
 local MYTHIC_ZENITH_HANDS = zenithGear["MYTHIC"]["GAUNTLETS"]
 local MYTHIC_ZENITH_SHOULDERS = zenithGear["MYTHIC"]["SHOULDERS"]
 
+local RAID_FINDER_MYSTIC_ALL = mysticGear["RAID_FINDER"]["ALL"]
+local NORMAL_MYSTIC_ALL = mysticGear["NORMAL"]["ALL"]
+local HEROIC_MYSTIC_ALL = mysticGear["HEROIC"]["ALL"]
+local MYTHIC_MYSTIC_ALL = mysticGear["MYTHIC"]["ALL"]
+
+local RAID_FINDER_VENERATED_ALL = veneratedGear["RAID_FINDER"]["ALL"]
+local NORMAL_VENERATED_ALL = veneratedGear["NORMAL"]["ALL"]
+local HEROIC_VENERATED_ALL = veneratedGear["HEROIC"]["ALL"]
+local MYTHIC_VENERATED_ALL = veneratedGear["MYTHIC"]["ALL"]
+
+local RAID_FINDER_ZENITH_ALL = zenithGear["RAID_FINDER"]["ALL"]
+local NORMAL_ZENITH_ALL = zenithGear["NORMAL"]["ALL"]
+local HEROIC_ZENITH_ALL = zenithGear["HEROIC"]["ALL"]
+local MYTHIC_ZENITH_ALL = zenithGear["MYTHIC"]["ALL"]
+
 local RAID_FINDER_DREADFUL_CHEST = dreadfulGear["RAID_FINDER"]["CHEST"]
 local RAID_FINDER_DREADFUL_HEAD = dreadfulGear["RAID_FINDER"]["HELM"]
 local RAID_FINDER_DREADFUL_LEGS = dreadfulGear["RAID_FINDER"]["LEGGINGS"]
 local RAID_FINDER_DREADFUL_HANDS = dreadfulGear["RAID_FINDER"]["GAUNTLETS"]
 local RAID_FINDER_DREADFUL_SHOULDERS = dreadfulGear["RAID_FINDER"]["SHOULDERS"]
+local RAID_FINDER_DREADFUL_ALL = dreadfulGear["RAID_FINDER"]["ALL"]
 local NORMAL_DREADFUL_CHEST = dreadfulGear["NORMAL"]["CHEST"]
 local NORMAL_DREADFUL_HEAD = dreadfulGear["NORMAL"]["HELM"]
 local NORMAL_DREADFUL_LEGS = dreadfulGear["NORMAL"]["LEGGINGS"]
 local NORMAL_DREADFUL_HANDS = dreadfulGear["NORMAL"]["GAUNTLETS"]
 local NORMAL_DREADFUL_SHOULDERS = dreadfulGear["NORMAL"]["SHOULDERS"]
+local NORMAL_DREADFUL_ALL = dreadfulGear["NORMAL"]["ALL"]
 local HEROIC_DREADFUL_CHEST = dreadfulGear["HEROIC"]["CHEST"]
 local HEROIC_DREADFUL_HEAD = dreadfulGear["HEROIC"]["HELM"]
 local HEROIC_DREADFUL_LEGS = dreadfulGear["HEROIC"]["LEGGINGS"]
 local HEROIC_DREADFUL_HANDS = dreadfulGear["HEROIC"]["GAUNTLETS"]
 local HEROIC_DREADFUL_SHOULDERS = dreadfulGear["HEROIC"]["SHOULDERS"]
+local HEROIC_DREADFUL_ALL = dreadfulGear["HEROIC"]["ALL"]
 local MYTHIC_DREADFUL_CHEST = dreadfulGear["MYTHIC"]["CHEST"]
 local MYTHIC_DREADFUL_HEAD = dreadfulGear["MYTHIC"]["HELM"]
 local MYTHIC_DREADFUL_LEGS = dreadfulGear["MYTHIC"]["LEGGINGS"]
 local MYTHIC_DREADFUL_HANDS = dreadfulGear["MYTHIC"]["GAUNTLETS"]
 local MYTHIC_DREADFUL_SHOULDERS = dreadfulGear["MYTHIC"]["SHOULDERS"]
+local MYTHIC_DREADFUL_ALL = dreadfulGear["MYTHIC"]["ALL"]
+
+local RAID_FINDER_ALL_GEAR = {}
+mergeTable(RAID_FINDER_ALL_GEAR, RAID_FINDER_DREADFUL_ALL)
+mergeTable(RAID_FINDER_ALL_GEAR, RAID_FINDER_MYSTIC_ALL)
+mergeTable(RAID_FINDER_ALL_GEAR, RAID_FINDER_VENERATED_ALL)
+mergeTable(RAID_FINDER_ALL_GEAR, RAID_FINDER_ZENITH_ALL)
+
+local NORMAL_ALL_GEAR = {}
+mergeTable(NORMAL_ALL_GEAR, NORMAL_DREADFUL_ALL)
+mergeTable(NORMAL_ALL_GEAR, NORMAL_MYSTIC_ALL)
+mergeTable(NORMAL_ALL_GEAR, NORMAL_VENERATED_ALL)
+mergeTable(NORMAL_ALL_GEAR, NORMAL_ZENITH_ALL)
+
+local HEROIC_ALL_GEAR = {}
+mergeTable(HEROIC_ALL_GEAR, HEROIC_DREADFUL_ALL)
+mergeTable(HEROIC_ALL_GEAR, HEROIC_MYSTIC_ALL)
+mergeTable(HEROIC_ALL_GEAR, HEROIC_VENERATED_ALL)
+mergeTable(HEROIC_ALL_GEAR, HEROIC_ZENITH_ALL)
+
+local MYTHIC_ALL_GEAR = {}
+mergeTable(MYTHIC_ALL_GEAR, MYTHIC_DREADFUL_ALL)
+mergeTable(MYTHIC_ALL_GEAR, MYTHIC_MYSTIC_ALL)
+mergeTable(MYTHIC_ALL_GEAR, MYTHIC_VENERATED_ALL)
+mergeTable(MYTHIC_ALL_GEAR, MYTHIC_ZENITH_ALL)
 
 ns.Raids.LOU = {
+
+    -- https://www.wowhead.com/item=228819/excessively-bejeweled-curio
+  [228819] = {
+    Difficulties = {
+      [Enum.ItemCreationContext.RaidFinder] = RAID_FINDER_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidNormal] = NORMAL_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidHeroic] = HEROIC_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidMythic] = MYTHIC_ALL_GEAR,
+    },
+  },
 
   --#region Dreadful (Death Knight, Demon Hunter, Warlock)
   --#region Chest
