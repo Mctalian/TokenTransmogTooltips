@@ -25,9 +25,11 @@ It _should_ work with tokens from the following raids:
 - Castle Nathria
 - Sepulcher of the First Ones
 - Vault of the Incarnates
-- Aberrus, the Shadowed Crucible
-- Amirdrassil, the Dream's Hope
-- Nerub'ar Palace
+- Aberrus, the Shadowed Crucible (including the Void-Touched Curio)
+- Amirdrassil, the Dream's Hope (including the Flame-Warped Curio)
+- Nerub'ar Palace (including the Web-Wrapped Curio)
+- Liberation of Undermine (including the Excessively Bejeweled Curio)
+- Manaforge Omega (including the Hungering Void Curio)
 
 **This data is manually maintained**, so it may not be complete or accurate. If you find a token that is not supported, please open an issue on the [GitHub repository](https://github.com/mctalian/TokenTransmogTooltips/issues).
 
