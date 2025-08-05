@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class NAPMage
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,4 +38,39 @@ ns._Gear.NAP.MAGE = {
     ["LEGGINGS"] = {[92969]={221781,},},
   },
 }
+
+-- Merge all gear pieces for each difficulty
+local LOCAL_RAID_FINDER_GEAR = {}
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.MAGE["RAID_FINDER"]["HELM"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.MAGE["RAID_FINDER"]["SHOULDERS"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.MAGE["RAID_FINDER"]["CHEST"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.MAGE["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.MAGE["RAID_FINDER"]["LEGGINGS"])
+
+local LOCAL_NORMAL_GEAR = {}
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.MAGE["NORMAL"]["HELM"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.MAGE["NORMAL"]["SHOULDERS"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.MAGE["NORMAL"]["CHEST"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.MAGE["NORMAL"]["GAUNTLETS"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.MAGE["NORMAL"]["LEGGINGS"])
+
+local LOCAL_HEROIC_GEAR = {}
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.MAGE["HEROIC"]["HELM"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.MAGE["HEROIC"]["SHOULDERS"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.MAGE["HEROIC"]["CHEST"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.MAGE["HEROIC"]["GAUNTLETS"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.MAGE["HEROIC"]["LEGGINGS"])
+
+local LOCAL_MYTHIC_GEAR = {}
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.MAGE["MYTHIC"]["HELM"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.MAGE["MYTHIC"]["SHOULDERS"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.MAGE["MYTHIC"]["CHEST"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.MAGE["MYTHIC"]["GAUNTLETS"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.MAGE["MYTHIC"]["LEGGINGS"])
+
+-- Create ALL sections for wildcard token use
+ns._Gear.NAP.MAGE["RAID_FINDER"]["ALL"] = LOCAL_RAID_FINDER_GEAR
+ns._Gear.NAP.MAGE["NORMAL"]["ALL"] = LOCAL_NORMAL_GEAR
+ns._Gear.NAP.MAGE["HEROIC"]["ALL"] = LOCAL_HEROIC_GEAR
+ns._Gear.NAP.MAGE["MYTHIC"]["ALL"] = LOCAL_MYTHIC_GEAR
 

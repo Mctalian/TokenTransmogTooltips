@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class NAPDruid
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,38 @@ ns._Gear.NAP.DRUID = {
     ["LEGGINGS"] = {[91560]={222095,},},
   },
 }
+
+-- Merge all gear pieces for each difficulty
+local LOCAL_RAID_FINDER_GEAR = {}
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.DRUID["RAID_FINDER"]["HELM"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.DRUID["RAID_FINDER"]["SHOULDERS"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.DRUID["RAID_FINDER"]["CHEST"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.DRUID["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(LOCAL_RAID_FINDER_GEAR, ns._Gear.NAP.DRUID["RAID_FINDER"]["LEGGINGS"])
+
+local LOCAL_NORMAL_GEAR = {}
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.DRUID["NORMAL"]["HELM"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.DRUID["NORMAL"]["SHOULDERS"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.DRUID["NORMAL"]["CHEST"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.DRUID["NORMAL"]["GAUNTLETS"])
+mergeTable(LOCAL_NORMAL_GEAR, ns._Gear.NAP.DRUID["NORMAL"]["LEGGINGS"])
+
+local LOCAL_HEROIC_GEAR = {}
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.DRUID["HEROIC"]["HELM"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.DRUID["HEROIC"]["SHOULDERS"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.DRUID["HEROIC"]["CHEST"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.DRUID["HEROIC"]["GAUNTLETS"])
+mergeTable(LOCAL_HEROIC_GEAR, ns._Gear.NAP.DRUID["HEROIC"]["LEGGINGS"])
+
+local LOCAL_MYTHIC_GEAR = {}
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.DRUID["MYTHIC"]["HELM"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.DRUID["MYTHIC"]["SHOULDERS"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.DRUID["MYTHIC"]["CHEST"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.DRUID["MYTHIC"]["GAUNTLETS"])
+mergeTable(LOCAL_MYTHIC_GEAR, ns._Gear.NAP.DRUID["MYTHIC"]["LEGGINGS"])
+
+-- Create ALL sections for wildcard token use
+ns._Gear.NAP.DRUID["RAID_FINDER"]["ALL"] = LOCAL_RAID_FINDER_GEAR
+ns._Gear.NAP.DRUID["NORMAL"]["ALL"] = LOCAL_NORMAL_GEAR
+ns._Gear.NAP.DRUID["HEROIC"]["ALL"] = LOCAL_HEROIC_GEAR
+ns._Gear.NAP.DRUID["MYTHIC"]["ALL"] = LOCAL_MYTHIC_GEAR

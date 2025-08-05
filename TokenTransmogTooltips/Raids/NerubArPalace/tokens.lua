@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@type NAPGearLookup
 local napGear = ns._Gear.NAP
 ---@type NAPMystic
@@ -95,9 +97,43 @@ local MYTHIC_DREADFUL_CHEST = dreadfulGear["MYTHIC"]["CHEST"]
 local MYTHIC_DREADFUL_LEGS = dreadfulGear["MYTHIC"]["LEGGINGS"]
 local MYTHIC_DREADFUL_HANDS = dreadfulGear["MYTHIC"]["GAUNTLETS"]
 
---225633 Zenith Shoulders
+local RAID_FINDER_ALL_GEAR = {}
+local NORMAL_ALL_GEAR = {}
+local HEROIC_ALL_GEAR = {}
+local MYTHIC_ALL_GEAR = {}
+
+-- Populate ALL_GEAR tables by merging from all groups
+mergeTable(RAID_FINDER_ALL_GEAR, dreadfulGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, mysticGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, veneratedGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, zenithGear["RAID_FINDER"]["ALL"])
+
+mergeTable(NORMAL_ALL_GEAR, dreadfulGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, mysticGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, veneratedGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, zenithGear["NORMAL"]["ALL"])
+
+mergeTable(HEROIC_ALL_GEAR, dreadfulGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, mysticGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, veneratedGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, zenithGear["HEROIC"]["ALL"])
+
+mergeTable(MYTHIC_ALL_GEAR, dreadfulGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, mysticGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, veneratedGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, zenithGear["MYTHIC"]["ALL"])
 
 ns.Raids.NAP = {
+
+  -- https://www.wowhead.com/item=225634/web-wrapped-curio
+  [225634] = {
+    Difficulties = {
+      [Enum.ItemCreationContext.RaidFinder] = RAID_FINDER_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidNormal] = NORMAL_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidHeroic] = HEROIC_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidMythic] = MYTHIC_ALL_GEAR,
+    },
+  },
 
   --#region Dreadful (Death Knight, Demon Hunter, Warlock)
   --#region Chest
