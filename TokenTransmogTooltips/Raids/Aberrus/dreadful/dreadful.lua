@@ -38,6 +38,11 @@ ns._Gear.Aberrus["DREADFUL"] = {
       ["DEMONHUNTER"] = demonhunter["RAID_FINDER"]["LEGGINGS"],
       ["WARLOCK"] = warlock["RAID_FINDER"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["DEATHKNIGHT"] = deathknight["RAID_FINDER"]["ALL"],
+      ["DEMONHUNTER"] = demonhunter["RAID_FINDER"]["ALL"],
+      ["WARLOCK"] = warlock["RAID_FINDER"]["ALL"],
+    },
   },
   ["NORMAL"] = {
     ["HELM"] = {
@@ -64,6 +69,11 @@ ns._Gear.Aberrus["DREADFUL"] = {
       ["DEATHKNIGHT"] = deathknight["NORMAL"]["LEGGINGS"],
       ["DEMONHUNTER"] = demonhunter["NORMAL"]["LEGGINGS"],
       ["WARLOCK"] = warlock["NORMAL"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["DEATHKNIGHT"] = deathknight["NORMAL"]["ALL"],
+      ["DEMONHUNTER"] = demonhunter["NORMAL"]["ALL"],
+      ["WARLOCK"] = warlock["NORMAL"]["ALL"],
     },
   },
   ["HEROIC"] = {
@@ -92,6 +102,11 @@ ns._Gear.Aberrus["DREADFUL"] = {
       ["DEMONHUNTER"] = demonhunter["HEROIC"]["LEGGINGS"],
       ["WARLOCK"] = warlock["HEROIC"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["DEATHKNIGHT"] = deathknight["HEROIC"]["ALL"],
+      ["DEMONHUNTER"] = demonhunter["HEROIC"]["ALL"],
+      ["WARLOCK"] = warlock["HEROIC"]["ALL"],
+    },
   },
   ["MYTHIC"] = {
     ["HELM"] = {
@@ -118,6 +133,11 @@ ns._Gear.Aberrus["DREADFUL"] = {
       ["DEATHKNIGHT"] = deathknight["MYTHIC"]["LEGGINGS"],
       ["DEMONHUNTER"] = demonhunter["MYTHIC"]["LEGGINGS"],
       ["WARLOCK"] = warlock["MYTHIC"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["DEATHKNIGHT"] = deathknight["MYTHIC"]["ALL"],
+      ["DEMONHUNTER"] = demonhunter["MYTHIC"]["ALL"],
+      ["WARLOCK"] = warlock["MYTHIC"]["ALL"],
     },
   },
 }

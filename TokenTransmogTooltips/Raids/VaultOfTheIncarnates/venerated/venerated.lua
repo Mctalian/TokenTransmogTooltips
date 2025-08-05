@@ -33,6 +33,11 @@ ns._Gear.VotI["VENERATED"] = {
       ["PRIEST"] = priest["RAID_FINDER"]["LEGGINGS"],
       ["SHAMAN"] = shaman["RAID_FINDER"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["PALADIN"] = paladin["RAID_FINDER"]["ALL"],
+      ["PRIEST"] = priest["RAID_FINDER"]["ALL"],
+      ["SHAMAN"] = shaman["RAID_FINDER"]["ALL"],
+    },
   },
   ["NORMAL"] = {
     ["SHOULDERS"] = {
@@ -54,6 +59,11 @@ ns._Gear.VotI["VENERATED"] = {
       ["PALADIN"] = paladin["NORMAL"]["LEGGINGS"],
       ["PRIEST"] = priest["NORMAL"]["LEGGINGS"],
       ["SHAMAN"] = shaman["NORMAL"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["PALADIN"] = paladin["NORMAL"]["ALL"],
+      ["PRIEST"] = priest["NORMAL"]["ALL"],
+      ["SHAMAN"] = shaman["NORMAL"]["ALL"],
     },
   },
   ["HEROIC"] = {
@@ -77,6 +87,11 @@ ns._Gear.VotI["VENERATED"] = {
       ["PRIEST"] = priest["HEROIC"]["LEGGINGS"],
       ["SHAMAN"] = shaman["HEROIC"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["PALADIN"] = paladin["HEROIC"]["ALL"],
+      ["PRIEST"] = priest["HEROIC"]["ALL"],
+      ["SHAMAN"] = shaman["HEROIC"]["ALL"],
+    },
   },
   ["MYTHIC"] = {
     ["SHOULDERS"] = {
@@ -98,6 +113,11 @@ ns._Gear.VotI["VENERATED"] = {
       ["PALADIN"] = paladin["MYTHIC"]["LEGGINGS"],
       ["PRIEST"] = priest["MYTHIC"]["LEGGINGS"],
       ["SHAMAN"] = shaman["MYTHIC"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["PALADIN"] = paladin["MYTHIC"]["ALL"],
+      ["PRIEST"] = priest["MYTHIC"]["ALL"],
+      ["SHAMAN"] = shaman["MYTHIC"]["ALL"],
     },
   },
 }

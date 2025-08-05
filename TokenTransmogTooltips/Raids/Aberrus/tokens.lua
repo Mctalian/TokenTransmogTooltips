@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@type AberrusGearLookup
 local aberrusGear = ns._Gear.Aberrus
 ---@type AberrusMystic
@@ -95,7 +97,39 @@ local MYTHIC_DREADFUL_CHEST = dreadfulGear["MYTHIC"]["CHEST"]
 local MYTHIC_DREADFUL_GAUNTLETS = dreadfulGear["MYTHIC"]["GAUNTLETS"]
 local MYTHIC_DREADFUL_LEGGINGS = dreadfulGear["MYTHIC"]["LEGGINGS"]
 
+local RAID_FINDER_ALL_GEAR = {}
+mergeTable(RAID_FINDER_ALL_GEAR, dreadfulGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, mysticGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, veneratedGear["RAID_FINDER"]["ALL"])
+mergeTable(RAID_FINDER_ALL_GEAR, zenithGear["RAID_FINDER"]["ALL"])
+local NORMAL_ALL_GEAR = {}
+mergeTable(NORMAL_ALL_GEAR, dreadfulGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, mysticGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, veneratedGear["NORMAL"]["ALL"])
+mergeTable(NORMAL_ALL_GEAR, zenithGear["NORMAL"]["ALL"])
+local HEROIC_ALL_GEAR = {}
+mergeTable(HEROIC_ALL_GEAR, dreadfulGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, mysticGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, veneratedGear["HEROIC"]["ALL"])
+mergeTable(HEROIC_ALL_GEAR, zenithGear["HEROIC"]["ALL"])
+local MYTHIC_ALL_GEAR = {}
+mergeTable(MYTHIC_ALL_GEAR, dreadfulGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, mysticGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, veneratedGear["MYTHIC"]["ALL"])
+mergeTable(MYTHIC_ALL_GEAR, zenithGear["MYTHIC"]["ALL"])
+
 ns.Raids.Aberrus = {
+
+  -- https://www.wowhead.com/item=206046/void-touched-curio
+  [206046] = {
+    Difficulties = {
+      [Enum.ItemCreationContext.RaidFinder] = RAID_FINDER_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidNormal] = NORMAL_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidHeroic] = HEROIC_ALL_GEAR,
+      [Enum.ItemCreationContext.RaidMythic] = MYTHIC_ALL_GEAR,
+    }
+  },
+
   --#region Dreadful (Death Knight, Demon Hunter, Warlock)
   --#region Chest
   -- https://www.wowhead.com/item=202631/dreadful-ventilation-fluid
