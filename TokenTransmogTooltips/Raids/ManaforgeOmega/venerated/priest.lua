@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaPriest
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.PRIEST = {
     ["LEGGINGS"] = {[116294]={286753,},},
   },
 }
+
+local PR_RF_ALL_GEAR = {}
+mergeTable(PR_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["HELM"])
+mergeTable(PR_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["SHOULDERS"])
+mergeTable(PR_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["CHEST"])
+mergeTable(PR_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(PR_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PRIEST["RAID_FINDER"]["ALL"] = PR_RF_ALL_GEAR
+
+local PR_NORMAL_ALL_GEAR = {}
+mergeTable(PR_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["HELM"])
+mergeTable(PR_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["SHOULDERS"])
+mergeTable(PR_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["CHEST"])
+mergeTable(PR_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["GAUNTLETS"])
+mergeTable(PR_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PRIEST["NORMAL"]["ALL"] = PR_NORMAL_ALL_GEAR
+
+local PR_HEROIC_ALL_GEAR = {}
+mergeTable(PR_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["HELM"])
+mergeTable(PR_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["SHOULDERS"])
+mergeTable(PR_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["CHEST"])
+mergeTable(PR_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["GAUNTLETS"])
+mergeTable(PR_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PRIEST["HEROIC"]["ALL"] = PR_HEROIC_ALL_GEAR
+
+local PR_MYTHIC_ALL_GEAR = {}
+mergeTable(PR_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["HELM"])
+mergeTable(PR_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["SHOULDERS"])
+mergeTable(PR_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["CHEST"])
+mergeTable(PR_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["GAUNTLETS"])
+mergeTable(PR_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PRIEST["MYTHIC"]["ALL"] = PR_MYTHIC_ALL_GEAR

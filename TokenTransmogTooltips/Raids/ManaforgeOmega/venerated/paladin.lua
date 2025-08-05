@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaPaladin
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.PALADIN = {
     ["LEGGINGS"] = {[115871]={285681,},},
   },
 }
+
+local PA_RF_ALL_GEAR = {}
+mergeTable(PA_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["HELM"])
+mergeTable(PA_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["SHOULDERS"])
+mergeTable(PA_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["CHEST"])
+mergeTable(PA_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(PA_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PALADIN["RAID_FINDER"]["ALL"] = PA_RF_ALL_GEAR
+
+local PA_NORMAL_ALL_GEAR = {}
+mergeTable(PA_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["HELM"])
+mergeTable(PA_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["SHOULDERS"])
+mergeTable(PA_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["CHEST"])
+mergeTable(PA_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["GAUNTLETS"])
+mergeTable(PA_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PALADIN["NORMAL"]["ALL"] = PA_NORMAL_ALL_GEAR
+
+local PA_HEROIC_ALL_GEAR = {}
+mergeTable(PA_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["HELM"])
+mergeTable(PA_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["SHOULDERS"])
+mergeTable(PA_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["CHEST"])
+mergeTable(PA_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["GAUNTLETS"])
+mergeTable(PA_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PALADIN["HEROIC"]["ALL"] = PA_HEROIC_ALL_GEAR
+
+local PA_MYTHIC_ALL_GEAR = {}
+mergeTable(PA_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["HELM"])
+mergeTable(PA_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["SHOULDERS"])
+mergeTable(PA_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["CHEST"])
+mergeTable(PA_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["GAUNTLETS"])
+mergeTable(PA_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.PALADIN["MYTHIC"]["ALL"] = PA_MYTHIC_ALL_GEAR

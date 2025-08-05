@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaWarlock
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.WARLOCK = {
     ["LEGGINGS"] = {[118437]={286645,},},
   },
 }
+
+local WL_RF_ALL_GEAR = {}
+mergeTable(WL_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["HELM"])
+mergeTable(WL_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["SHOULDERS"])
+mergeTable(WL_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["CHEST"])
+mergeTable(WL_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(WL_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.WARLOCK["RAID_FINDER"]["ALL"] = WL_RF_ALL_GEAR
+
+local WL_NORMAL_ALL_GEAR = {}
+mergeTable(WL_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["HELM"])
+mergeTable(WL_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["SHOULDERS"])
+mergeTable(WL_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["CHEST"])
+mergeTable(WL_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["GAUNTLETS"])
+mergeTable(WL_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.WARLOCK["NORMAL"]["ALL"] = WL_NORMAL_ALL_GEAR
+
+local WL_HEROIC_ALL_GEAR = {}
+mergeTable(WL_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["HELM"])
+mergeTable(WL_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["SHOULDERS"])
+mergeTable(WL_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["CHEST"])
+mergeTable(WL_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["GAUNTLETS"])
+mergeTable(WL_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.WARLOCK["HEROIC"]["ALL"] = WL_HEROIC_ALL_GEAR
+
+local WL_MYTHIC_ALL_GEAR = {}
+mergeTable(WL_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["HELM"])
+mergeTable(WL_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["SHOULDERS"])
+mergeTable(WL_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["CHEST"])
+mergeTable(WL_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["GAUNTLETS"])
+mergeTable(WL_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.WARLOCK["MYTHIC"]["ALL"] = WL_MYTHIC_ALL_GEAR
