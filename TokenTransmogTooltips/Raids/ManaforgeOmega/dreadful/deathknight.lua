@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaDeathknight
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.DEATHKNIGHT = {
     ["LEGGINGS"] = {[115134]={285789,},},
   },
 }
+
+local DK_RF_ALL_GEAR = {}
+mergeTable(DK_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["HELM"])
+mergeTable(DK_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["SHOULDERS"])
+mergeTable(DK_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["CHEST"])
+mergeTable(DK_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(DK_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.DEATHKNIGHT["RAID_FINDER"]["ALL"] = DK_RF_ALL_GEAR
+
+local DK_NORMAL_ALL_GEAR = {}
+mergeTable(DK_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["HELM"])
+mergeTable(DK_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["SHOULDERS"])
+mergeTable(DK_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["CHEST"])
+mergeTable(DK_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["GAUNTLETS"])
+mergeTable(DK_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.DEATHKNIGHT["NORMAL"]["ALL"] = DK_NORMAL_ALL_GEAR
+
+local DK_HEROIC_ALL_GEAR = {}
+mergeTable(DK_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["HELM"])
+mergeTable(DK_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["SHOULDERS"])
+mergeTable(DK_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["CHEST"])
+mergeTable(DK_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["GAUNTLETS"])
+mergeTable(DK_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.DEATHKNIGHT["HEROIC"]["ALL"] = DK_HEROIC_ALL_GEAR
+
+local DK_MYTHIC_ALL_GEAR = {}
+mergeTable(DK_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["HELM"])
+mergeTable(DK_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["SHOULDERS"])
+mergeTable(DK_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["CHEST"])
+mergeTable(DK_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["GAUNTLETS"])
+mergeTable(DK_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.DEATHKNIGHT["MYTHIC"]["ALL"] = DK_MYTHIC_ALL_GEAR

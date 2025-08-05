@@ -45,6 +45,12 @@ ns._Gear.ManaforgeOmega["ZENITH"] = {
       ["ROGUE"] = rogue["RAID_FINDER"]["LEGGINGS"],
       ["WARRIOR"] = warrior["RAID_FINDER"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["EVOKER"] = evoker["RAID_FINDER"]["ALL"],
+      ["MONK"] = monk["RAID_FINDER"]["ALL"],
+      ["ROGUE"] = rogue["RAID_FINDER"]["ALL"],
+      ["WARRIOR"] = warrior["RAID_FINDER"]["ALL"],
+    },
   },
   ["NORMAL"] = {
     ["HELM"] = {
@@ -76,6 +82,12 @@ ns._Gear.ManaforgeOmega["ZENITH"] = {
       ["MONK"] = monk["NORMAL"]["LEGGINGS"],
       ["ROGUE"] = rogue["NORMAL"]["LEGGINGS"],
       ["WARRIOR"] = warrior["NORMAL"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["EVOKER"] = evoker["NORMAL"]["ALL"],
+      ["MONK"] = monk["NORMAL"]["ALL"],
+      ["ROGUE"] = rogue["NORMAL"]["ALL"],
+      ["WARRIOR"] = warrior["NORMAL"]["ALL"],
     },
   },
   ["HEROIC"] = {
@@ -109,6 +121,12 @@ ns._Gear.ManaforgeOmega["ZENITH"] = {
       ["ROGUE"] = rogue["HEROIC"]["LEGGINGS"],
       ["WARRIOR"] = warrior["HEROIC"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["EVOKER"] = evoker["HEROIC"]["ALL"],
+      ["MONK"] = monk["HEROIC"]["ALL"],
+      ["ROGUE"] = rogue["HEROIC"]["ALL"],
+      ["WARRIOR"] = warrior["HEROIC"]["ALL"],
+    },
   },
   ["MYTHIC"] = {
     ["HELM"] = {
@@ -140,6 +158,12 @@ ns._Gear.ManaforgeOmega["ZENITH"] = {
       ["MONK"] = monk["MYTHIC"]["LEGGINGS"],
       ["ROGUE"] = rogue["MYTHIC"]["LEGGINGS"],
       ["WARRIOR"] = warrior["MYTHIC"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["EVOKER"] = evoker["MYTHIC"]["ALL"],
+      ["MONK"] = monk["MYTHIC"]["ALL"],
+      ["ROGUE"] = rogue["MYTHIC"]["ALL"],
+      ["WARRIOR"] = warrior["MYTHIC"]["ALL"],
     },
   },
 }

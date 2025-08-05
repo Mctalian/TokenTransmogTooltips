@@ -1,5 +1,7 @@
 local addonName, ns = ...;
 
+local mergeTable = ns.mergeTable;
+
 -- Reference variables for gear tables
 local DreadfulChestRF = ns._Gear.ManaforgeOmega.DREADFUL["RAID_FINDER"]["CHEST"]
 local DreadfulChestN = ns._Gear.ManaforgeOmega.DREADFUL["NORMAL"]["CHEST"]
@@ -85,7 +87,58 @@ local ZenithShouldersN = ns._Gear.ManaforgeOmega.ZENITH["NORMAL"]["SHOULDERS"]
 local ZenithShouldersH = ns._Gear.ManaforgeOmega.ZENITH["HEROIC"]["SHOULDERS"]
 local ZenithShouldersM = ns._Gear.ManaforgeOmega.ZENITH["MYTHIC"]["SHOULDERS"]
 
+local DreadfulAllGearRF = ns._Gear.ManaforgeOmega.DREADFUL["RAID_FINDER"]["ALL"]
+local DreadfulAllGearN = ns._Gear.ManaforgeOmega.DREADFUL["NORMAL"]["ALL"]
+local DreadfulAllGearH = ns._Gear.ManaforgeOmega.DREADFUL["HEROIC"]["ALL"]
+local DreadfulAllGearM = ns._Gear.ManaforgeOmega.DREADFUL["MYTHIC"]["ALL"]
+local MysticAllGearRF = ns._Gear.ManaforgeOmega.MYSTIC["RAID_FINDER"]["ALL"]
+local MysticAllGearN = ns._Gear.ManaforgeOmega.MYSTIC["NORMAL"]["ALL"]
+local MysticAllGearH = ns._Gear.ManaforgeOmega.MYSTIC["HEROIC"]["ALL"]
+local MysticAllGearM = ns._Gear.ManaforgeOmega.MYSTIC["MYTHIC"]["ALL"]
+local VeneratedAllGearRF = ns._Gear.ManaforgeOmega.VENERATED["RAID_FINDER"]["ALL"]
+local VeneratedAllGearN = ns._Gear.ManaforgeOmega.VENERATED["NORMAL"]["ALL"]
+local VeneratedAllGearH = ns._Gear.ManaforgeOmega.VENERATED["HEROIC"]["ALL"]
+local VeneratedAllGearM = ns._Gear.ManaforgeOmega.VENERATED["MYTHIC"]["ALL"]
+local ZenithAllGearRF = ns._Gear.ManaforgeOmega.ZENITH["RAID_FINDER"]["ALL"]
+local ZenithAllGearN = ns._Gear.ManaforgeOmega.ZENITH["NORMAL"]["ALL"]
+local ZenithAllGearH = ns._Gear.ManaforgeOmega.ZENITH["HEROIC"]["ALL"]
+local ZenithAllGearM = ns._Gear.ManaforgeOmega.ZENITH["MYTHIC"]["ALL"]
+
+local RaidFinderAllGear = {}
+mergeTable(RaidFinderAllGear, DreadfulAllGearRF)
+mergeTable(RaidFinderAllGear, MysticAllGearRF)
+mergeTable(RaidFinderAllGear, VeneratedAllGearRF)
+mergeTable(RaidFinderAllGear, ZenithAllGearRF)
+
+local NormalAllGear = {}
+mergeTable(NormalAllGear, DreadfulAllGearN)
+mergeTable(NormalAllGear, MysticAllGearN)
+mergeTable(NormalAllGear, VeneratedAllGearN)
+mergeTable(NormalAllGear, ZenithAllGearN)
+
+local HeroicAllGear = {}
+mergeTable(HeroicAllGear, DreadfulAllGearH)
+mergeTable(HeroicAllGear, MysticAllGearH)
+mergeTable(HeroicAllGear, VeneratedAllGearH)
+mergeTable(HeroicAllGear, ZenithAllGearH)
+
+local MythicAllGear = {}
+mergeTable(MythicAllGear, DreadfulAllGearM)
+mergeTable(MythicAllGear, MysticAllGearM)
+mergeTable(MythicAllGear, VeneratedAllGearM)
+mergeTable(MythicAllGear, ZenithAllGearM)
+
 ns.Raids.ManaforgeOmega = {
+
+  -- https://www.wowhead.com/item=237602/hungering-void-curio
+  [237602] = { -- All Gear
+    Difficulties = {
+      [Enum.ItemCreationContext.RaidFinder] = RaidFinderAllGear,
+      [Enum.ItemCreationContext.RaidNormal] = NormalAllGear,
+      [Enum.ItemCreationContext.RaidHeroic] = HeroicAllGear,
+      [Enum.ItemCreationContext.RaidMythic] = MythicAllGear,
+    },
+  },
 
   --#region Dreadful (Death Knight, Demon Hunter, Warlock)
   -- https://www.wowhead.com/item=237581/dreadful-voidglass-contaminant

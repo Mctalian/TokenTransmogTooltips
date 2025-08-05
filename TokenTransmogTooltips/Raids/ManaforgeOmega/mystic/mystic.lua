@@ -38,6 +38,11 @@ ns._Gear.ManaforgeOmega["MYSTIC"] = {
       ["HUNTER"] = hunter["RAID_FINDER"]["LEGGINGS"],
       ["MAGE"] = mage["RAID_FINDER"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["DRUID"] = druid["RAID_FINDER"]["ALL"],
+      ["HUNTER"] = hunter["RAID_FINDER"]["ALL"],
+      ["MAGE"] = mage["RAID_FINDER"]["ALL"],
+    },
   },
   ["NORMAL"] = {
     ["HELM"] = {
@@ -64,6 +69,11 @@ ns._Gear.ManaforgeOmega["MYSTIC"] = {
       ["DRUID"] = druid["NORMAL"]["LEGGINGS"],
       ["HUNTER"] = hunter["NORMAL"]["LEGGINGS"],
       ["MAGE"] = mage["NORMAL"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["DRUID"] = druid["NORMAL"]["ALL"],
+      ["HUNTER"] = hunter["NORMAL"]["ALL"],
+      ["MAGE"] = mage["NORMAL"]["ALL"],
     },
   },
   ["HEROIC"] = {
@@ -92,6 +102,11 @@ ns._Gear.ManaforgeOmega["MYSTIC"] = {
       ["HUNTER"] = hunter["HEROIC"]["LEGGINGS"],
       ["MAGE"] = mage["HEROIC"]["LEGGINGS"],
     },
+    ["ALL"] = {
+      ["DRUID"] = druid["HEROIC"]["ALL"],
+      ["HUNTER"] = hunter["HEROIC"]["ALL"],
+      ["MAGE"] = mage["HEROIC"]["ALL"],
+    },
   },
   ["MYTHIC"] = {
     ["HELM"] = {
@@ -118,6 +133,11 @@ ns._Gear.ManaforgeOmega["MYSTIC"] = {
       ["DRUID"] = druid["MYTHIC"]["LEGGINGS"],
       ["HUNTER"] = hunter["MYTHIC"]["LEGGINGS"],
       ["MAGE"] = mage["MYTHIC"]["LEGGINGS"],
+    },
+    ["ALL"] = {
+      ["DRUID"] = druid["MYTHIC"]["ALL"],
+      ["HUNTER"] = hunter["MYTHIC"]["ALL"],
+      ["MAGE"] = mage["MYTHIC"]["ALL"],
     },
   },
 }

@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaRogue
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.ROGUE = {
     ["LEGGINGS"] = {[117797]={286213,},},
   },
 }
+
+local RO_RF_ALL_GEAR = {}
+mergeTable(RO_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["HELM"])
+mergeTable(RO_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["SHOULDERS"])
+mergeTable(RO_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["CHEST"])
+mergeTable(RO_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(RO_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.ROGUE["RAID_FINDER"]["ALL"] = RO_RF_ALL_GEAR
+
+local RO_NORMAL_ALL_GEAR = {}
+mergeTable(RO_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["HELM"])
+mergeTable(RO_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["SHOULDERS"])
+mergeTable(RO_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["CHEST"])
+mergeTable(RO_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["GAUNTLETS"])
+mergeTable(RO_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.ROGUE["NORMAL"]["ALL"] = RO_NORMAL_ALL_GEAR
+
+local RO_HEROIC_ALL_GEAR = {}
+mergeTable(RO_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["HELM"])
+mergeTable(RO_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["SHOULDERS"])
+mergeTable(RO_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["CHEST"])
+mergeTable(RO_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["GAUNTLETS"])
+mergeTable(RO_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.ROGUE["HEROIC"]["ALL"] = RO_HEROIC_ALL_GEAR
+
+local RO_MYTHIC_ALL_GEAR = {}
+mergeTable(RO_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["HELM"])
+mergeTable(RO_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["SHOULDERS"])
+mergeTable(RO_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["CHEST"])
+mergeTable(RO_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["GAUNTLETS"])
+mergeTable(RO_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.ROGUE["MYTHIC"]["ALL"] = RO_MYTHIC_ALL_GEAR

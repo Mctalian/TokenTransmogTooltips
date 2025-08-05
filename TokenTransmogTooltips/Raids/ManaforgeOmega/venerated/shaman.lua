@@ -1,5 +1,7 @@
 local addonName, ns = ...
 
+local mergeTable = ns.mergeTable
+
 ---@class ManaforgeOmegaShaman
 ---@field RAID_FINDER table<string, table>
 ---@field NORMAL table<string, table>
@@ -36,3 +38,35 @@ ns._Gear.ManaforgeOmega.SHAMAN = {
     ["LEGGINGS"] = {[118512]={285895,},},
   },
 }
+
+local SH_RF_ALL_GEAR = {}
+mergeTable(SH_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["HELM"])
+mergeTable(SH_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["SHOULDERS"])
+mergeTable(SH_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["CHEST"])
+mergeTable(SH_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["GAUNTLETS"])
+mergeTable(SH_RF_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.SHAMAN["RAID_FINDER"]["ALL"] = SH_RF_ALL_GEAR
+
+local SH_NORMAL_ALL_GEAR = {}
+mergeTable(SH_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["HELM"])
+mergeTable(SH_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["SHOULDERS"])
+mergeTable(SH_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["CHEST"])
+mergeTable(SH_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["GAUNTLETS"])
+mergeTable(SH_NORMAL_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.SHAMAN["NORMAL"]["ALL"] = SH_NORMAL_ALL_GEAR
+
+local SH_HEROIC_ALL_GEAR = {}
+mergeTable(SH_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["HELM"])
+mergeTable(SH_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["SHOULDERS"])
+mergeTable(SH_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["CHEST"])
+mergeTable(SH_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["GAUNTLETS"])
+mergeTable(SH_HEROIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.SHAMAN["HEROIC"]["ALL"] = SH_HEROIC_ALL_GEAR
+
+local SH_MYTHIC_ALL_GEAR = {}
+mergeTable(SH_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["HELM"])
+mergeTable(SH_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["SHOULDERS"])
+mergeTable(SH_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["CHEST"])
+mergeTable(SH_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["GAUNTLETS"])
+mergeTable(SH_MYTHIC_ALL_GEAR, ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["LEGGINGS"])
+ns._Gear.ManaforgeOmega.SHAMAN["MYTHIC"]["ALL"] = SH_MYTHIC_ALL_GEAR
